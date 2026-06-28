@@ -46,3 +46,12 @@ Cron jobs
 
 15. What does a typical API endpoint request look like?
 15. A typical API endpoint request includes a HTTP verb (like GET), a specific route (like /health), and potentially additional parameters or data
+
+16. What is an environment variable?
+16. A variable injected into the environment that allows dynamic configuration and options within a server without changing the code, useful for managing secrets and reusing codebases across different environments
+
+17. What problem do environment variables solve when managing application configurations?
+17. They allow dynamic value changes without hard-coding variables, making it easier to manage different settings for staging, production, and local development environments
+
+18. How do environment variables impact code deployment and configuration management?
+18. They enable changing configuration values without modifying code, typically requiring only a server restart to apply new settings
