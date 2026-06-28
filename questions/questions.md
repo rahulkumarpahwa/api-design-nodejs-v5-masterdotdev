@@ -100,3 +100,18 @@ Cron jobs
 
 33. What is the purpose of a secrets management tool like HashiCorp Vault?
 33. To centralize and securely manage environment variables and secrets across different environments, providing a single SDK or URL to load configuration without exposing individual values
+
+34. What are the five main HTTP methods discussed in the explanation?
+34. GET (retrieve data), POST (create something), PUT (replace entire resource), PATCH (partially update resource), and DELETE (remove resource)
+
+35. What does CRUD stand for in the context of API routes?
+35. Create, Read, Update, and Delete - representing the four primary actions that can be performed on a resource
+
+36. What is the primary purpose of a GET request?
+36. To retrieve data from a server, typically returning HTML or JSON, with the intent of getting something from the server
+
+37. What is the key difference between a PUT and a PATCH request?
+37. A PUT request replaces an entire resource, changing nearly everything except the ID, while a PATCH request partially updates specific fields of a resource
+
+38. What is the main goal of HTTP methods in an API?
+38. To help other systems and clients understand the intent of the request, and allow software to make assumptions about how to handle different types of requests
