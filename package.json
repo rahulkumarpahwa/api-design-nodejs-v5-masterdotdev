@@ -1,0 +1,38 @@
+{
+  "name": "api-design-nodejs-v5-masterdotdev",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src/index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch ./src/index.ts",
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "test:coverage": "vitest run --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rahulkumarpahwa/api-design-nodejs-v5-masterdotdev.git"
+  },
+  "keywords": [
+    "habit-tracker",
+    "api",
+    "nodejs",
+    "typescript",
+    "express",
+    "drizzle-orm"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rahulkumarpahwa/api-design-nodejs-v5-masterdotdev/issues"
+  },
+  "homepage": "https://github.com/rahulkumarpahwa/api-design-nodejs-v5-masterdotdev#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "vitest": "^4.1.9"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6"
+  }
+}
