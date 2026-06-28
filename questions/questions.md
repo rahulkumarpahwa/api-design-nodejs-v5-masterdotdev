@@ -190,3 +190,18 @@ Cron jobs
 
 63. What special routing configuration is typically required for Single Page Applications (SPAs)?
 63. Servers need to always return the index.html file, allowing client-side routing to handle navigation, which platforms like Netlify can handle automatically
+
+64. What is the fundamental definition of Middleware?
+64. Middleware is code that sits between two other pieces of code, typically a set of functions that can be run in a specific order, which can inspect, modify, or short-circuit a request/response.
+
+65. What unique capabilities does Middleware have in an API context?
+65. Middleware can access request and response objects, inspect and modify requests, potentially respond before a handler, and can short-circuit a request using the response object.
+
+66. What critical constraint exists when responding to an HTTP request?
+66. A request can only be responded to once. After a response is sent, the connection is closed, and additional attempts to respond will result in errors.
+
+67. How does JSON method sending differ from manual JSON transmission?
+67. JSON methods automatically stringify data, add appropriate headers, and set content-type to 'application/json', which is equivalent to manually stringifying JSON and setting headers.
+
+68. What potential issue must developers be cautious of when using Middleware?
+68. Developers must protect handlers from executing if Middleware has already responded to prevent serious routing and response issues.
