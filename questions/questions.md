@@ -130,3 +130,18 @@ Cron jobs
 
 43. What do HTTP status codes in the 500 range typically indicate?
 43. Server-side errors or issues
+
+44. What are sub-routers in Express, and how are they typically organized?
+44. Sub-routers are individual routers for specific resources that can be mounted onto a top-level router. They are typically created by importing the Router from Express and are organized by resource type (e.g., User Routes, Habit Routes).
+
+45. What are the typical CRUD routes for a Habit resource?
+45. The typical CRUD routes for a Habit resource include: GET / (get all habits), GET /:id (get a single habit), POST / (create a habit), DELETE /:id (delete a habit), and potentially custom routes like POST /complete/:id.
+
+46. What HTTP status codes are most commonly used for successful responses?
+46. 200 and 201 are the most commonly used status codes for successful responses. Status 201 technically means a successful post request, while 200 is a general success status.
+
+47. What is required to import a module in JavaScript?
+47. To import a module, it must first be exported. A module is essentially a closure, and exporting allows other parts of the application to access it.
+
+48. How do developers typically handle error status codes?
+48. Developers tend to be more precise with 400-series error codes since they are user-facing, while most successful routes default to a 200 status code.

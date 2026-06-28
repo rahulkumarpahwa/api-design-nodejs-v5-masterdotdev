@@ -1,4 +1,6 @@
 import express from 'express';
+import { habitRouter } from './routes/habitRoutes.ts';
+import { authRouter } from './routes/authRoutes.ts';
 const app = express();
 
 // const apiTimeout = 10 * 1000;
@@ -23,15 +25,10 @@ app.get('/health', (req, res) => {
     res.status(200).json({ status: 'OK', timestamp: new Date().toISOString(), service: 'Habit Tracker API' });
 });
 
-app.post("/api/v1/habits", (req, res) => {
-    // Logic to create a new habit
-    res.status(201).json({ message: "Habit created successfully" });
-});
+// 
+app.use("/api/v1/habits", habitRouter);
+app.use("/api/v1/", authRouter);
 
-app.get("/api/v1/habits", (req, res) => {
-    // Logic to retrieve all habits
-    res.status(200).json({ habits: [] });
-});
 
 // export for the test
 export { app }
