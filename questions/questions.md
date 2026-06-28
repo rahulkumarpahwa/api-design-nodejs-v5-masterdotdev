@@ -115,3 +115,18 @@ Cron jobs
 
 38. What is the main goal of HTTP methods in an API?
 38. To help other systems and clients understand the intent of the request, and allow software to make assumptions about how to handle different types of requests
+
+39. What HTTP status code is returned when a route is not registered in Express?
+39. 404 found 
+
+40. What do HTTP status codes in the 400 range typically indicate?
+40. The client's request is incorrect or invalid
+
+41. What happens when a server route handler does not send a response?
+41. The server will hang and eventually timeout
+
+42. What do HTTP status codes in the 200 range typically represent?
+42. Successful requests
+
+43. What do HTTP status codes in the 500 range typically indicate?
+43. Server-side errors or issues
