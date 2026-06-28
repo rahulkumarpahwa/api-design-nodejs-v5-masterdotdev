@@ -70,3 +70,18 @@ Cron jobs
 
 23. What are the benefits of creating a custom environment variable handling approach?
 23. To get type-checked environment variables, autocomplete, guarantees that required variables are present, and ability to set defaults for optional variables
+
+24. What is an enum in Zod schema, and what are the typical values for NODE_ENV?
+24. An enum represents a select set of options. For NODE_ENV, the typical values are development, test, and production.
+
+25. Why is the coerce method used when defining environment variables in Zod?
+25. Environment variables are always strings, so coerce is used to convert them to the desired type (like a number) that the application expects.
+
+26. What protocol prefix indicates a PostgreSQL database URL?
+26. 'postgres://' is the protocol prefix that indicates a PostgreSQL database URL.
+
+27. What is the recommended minimum length for a JWT_SECRET?
+27. The JWT_SECRET should be a string with a minimum of 32 characters.
+
+28. What range is recommended for BCRYPT_ROUNDS when hashing passwords?
+28. BCRYPT_ROUNDS should be a number with a minimum of 10 and a maximum of 20.

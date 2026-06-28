@@ -8,5 +8,9 @@
     "verbatimModuleSyntax": true,
     "allowImportingTsExtensions": true,
     "types": ["vitest/globals"]
-  }
+  },
+  "include": [
+    "src",
+    "types"
+  ]
 }
