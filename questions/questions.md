@@ -145,3 +145,18 @@ Cron jobs
 
 48. How do developers typically handle error status codes?
 48. Developers tend to be more precise with 400-series error codes since they are user-facing, while most successful routes default to a 200 status code.
+
+49. What HTTP method is used to get all users?
+49. GET method is used to retrieve all users
+
+50. What HTTP method is used to create a new user in an admin context?
+50. POST method is used to create a new user, typically restricted to admin dashboard access
+
+51. What HTTP method is used to update user details?
+51. PUT method is used to update existing user details
+
+52. What HTTP method is used to remove a user from the system?
+52. DELETE method is used to delete a user
+
+53. What is the standard HTTP status code returned when successfully retrieving all users?
+53. Status code 200 is typically used when successfully retrieving all users
