@@ -55,3 +55,18 @@ Cron jobs
 
 18. How do environment variables impact code deployment and configuration management?
 18. They enable changing configuration values without modifying code, typically requiring only a server restart to apply new settings
+
+19. What is a potential problem with environment variables?
+19. They are not typed, and it's difficult to know which ones exist without checking the .env file or consulting an experienced team member
+
+20. Why create multiple .env files like .env, .env.example, and .env.test?
+20. To separate environment configurations, keep secrets out of version control, and provide example variable names for team members while allowing different configurations for testing
+
+21. How are environment variables traditionally accessed in Node.js?
+21. By using process.env.[variable name], which does not provide type checking
+
+22. What is Zod used for in the context of environment variables?
+22. Zod provides runtime type-checking and schema validation, allowing verification of environment variable types and presence at runtime
+
+23. What are the benefits of creating a custom environment variable handling approach?
+23. To get type-checked environment variables, autocomplete, guarantees that required variables are present, and ability to set defaults for optional variables
