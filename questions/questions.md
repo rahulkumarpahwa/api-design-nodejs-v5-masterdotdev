@@ -31,3 +31,18 @@ Cron jobs
 
 10. What is the purpose of a src or source directory in a project?
 10. A src directory contains the raw source files that will be written for a project, serving as an organizational convention for storing original code files
+
+11. What is the primary function of Postman?
+11. Postman allows users to visually test APIs by sending different types of requests and viewing responses
+
+12. What types of data can a server send back over a network?
+12. A server can send parsable data like JSON, HTML, strings, files, but cannot send executable logic or cyclic objects directly
+
+13. What is the meaning of localhost in a URL?
+13. Localhost represents the IP address 127.0.0.1, which refers to the current device running the server
+
+14. What network transmission restrictions exist when sending data?
+14. You cannot send executable logic, cyclic objects, or directly executable code over the network; data must be convertible to a string or file
+
+15. What does a typical API endpoint request look like?
+15. A typical API endpoint request includes a HTTP verb (like GET), a specific route (like /health), and potentially additional parameters or data
