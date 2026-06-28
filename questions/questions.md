@@ -85,3 +85,18 @@ Cron jobs
 
 28. What range is recommended for BCRYPT_ROUNDS when hashing passwords?
 28. BCRYPT_ROUNDS should be a number with a minimum of 10 and a maximum of 20.
+
+29. What is the primary recommendation for handling .env files in a project?
+29. Never commit .env files to GitHub to protect sensitive information and secrets
+
+30. What are the benefits of setting up an .env file for configuration?
+30. Provides a tidy and predictable environment, ensures required environment variables are set, and helps catch errors when starting the server
+
+31. What is a strategy for managing secrets and sensitive configuration values?
+31. Rotate secrets periodically, use secrets management tools like HashiCorp Vault, and avoid hardcoding sensitive information
+
+32. How can environment variables be made more flexible across different deployment stages?
+32. Make environment variables optional or non-optional based on the current environment (e.g., production vs development), and set different defaults or validation rules
+
+33. What is the purpose of a secrets management tool like HashiCorp Vault?
+33. To centralize and securely manage environment variables and secrets across different environments, providing a single SDK or URL to load configuration without exposing individual values
