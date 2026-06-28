@@ -1,7 +1,5 @@
 import express from 'express';
-import { habitRouter } from './routes/habitRoutes.ts';
-import { authRouter } from './routes/authRoutes.ts';
-import { userRouter } from './routes/userRouter.ts';
+import { v1Router } from './routes/v1/index.ts';
 const app = express();
 
 // const apiTimeout = 10 * 1000;
@@ -26,11 +24,16 @@ app.get('/health', (req, res) => {
     res.status(200).json({ status: 'OK', timestamp: new Date().toISOString(), service: 'Habit Tracker API' });
 });
 
-// 
-app.use("/api/v1/auth", authRouter);
-app.use("/api/v1/habits", habitRouter);
-app.use("/api/v1/users", userRouter);
+app.use("/api/v1", v1Router);
 
+// 404 handler for API routes
+app.use("/api/v1/*path", (req, res) => {
+    res.status(404).json({
+        error: 'Not Found',
+        message: `Cannot ${req.method} ${req.originalUrl}`,
+        timestamp: new Date().toISOString(),
+    })
+})
 
 // export for the test
 export { app }

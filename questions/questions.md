@@ -175,3 +175,18 @@ Cron jobs
 
 58. What does Express actually enforce regarding HTTP methods and responses?
 58. Express only cares that you send back a response or throw an error; it does not enforce REST conventions or the intended purpose of specific HTTP methods
+
+59. What potential issue can arise when creating deeply nested routers?
+59. Route collisions can occur, where routes registered first will take precedence, which can be difficult to debug in a sprawling router configuration
+
+60. How can routes be conditionally created in a web application?
+60. Routes can be conditionally added based on environment modes (like dev mode), feature flags set by environment variables, or specific conditions like A/B testing scenarios
+
+61. What is the purpose of a /health endpoint in web services?
+61. It allows monitoring tools to ping the service repeatedly, checking if the application is up, measuring response times, and detecting potential performance issues or service degradation
+
+62. What are different approaches to organizing routes in a web application?
+62. Routes can be organized by resource (users, authentication, habits), feature-based approach, by versions, or co-located in separate folders with their associated components like routes, tests, handlers, and database queries
+
+63. What special routing configuration is typically required for Single Page Applications (SPAs)?
+63. Servers need to always return the index.html file, allowing client-side routing to handle navigation, which platforms like Netlify can handle automatically
