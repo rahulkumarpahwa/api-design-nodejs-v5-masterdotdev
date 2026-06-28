@@ -160,3 +160,18 @@ Cron jobs
 
 53. What is the standard HTTP status code returned when successfully retrieving all users?
 53. Status code 200 is typically used when successfully retrieving all users
+
+54. What does app.use() do when mounting routes in Express?
+54. It allows you to specify a base route path for a group of routes, so routes can be decoupled and easily relocated without changing internal route definitions
+
+55. Why do you need to include file extensions when importing modules in Node with ES modules?
+55. Node requires explicit file extensions when using ES modules; without the extension, the module will not import correctly
+
+56. What is the difference between HTTP verbs and the .use() method in Express?
+56. HTTP verbs are specific methods (GET, POST, etc.) tied to particular actions, while .use() handles all HTTP methods for a given route regardless of the specific verb
+
+57. How do subroutes work in Express routing?
+57. Subroutes allow you to mount routes under a specific base path, so a route like /register under /api/auth would become /api/auth/register
+
+58. What does Express actually enforce regarding HTTP methods and responses?
+58. Express only cares that you send back a response or throw an error; it does not enforce REST conventions or the intended purpose of specific HTTP methods

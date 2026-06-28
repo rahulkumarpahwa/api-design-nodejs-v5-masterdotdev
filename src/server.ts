@@ -1,6 +1,7 @@
 import express from 'express';
 import { habitRouter } from './routes/habitRoutes.ts';
 import { authRouter } from './routes/authRoutes.ts';
+import { userRouter } from './routes/userRouter.ts';
 const app = express();
 
 // const apiTimeout = 10 * 1000;
@@ -26,8 +27,9 @@ app.get('/health', (req, res) => {
 });
 
 // 
+app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/habits", habitRouter);
-app.use("/api/v1/", authRouter);
+app.use("/api/v1/users", userRouter);
 
 
 // export for the test
