@@ -24,3 +24,46 @@ export const validateBody = (schema: ZodType) => {
         }
     }
 }
+
+export const validateParams = (schema: ZodType) => {
+    return (req: Request, res: Response, next: NextFunction) => {
+        try {
+            schema.parse(req.params); // The reason why we're not attaching anything here is because parameters are always strings no matter whatIt's not like, it's notlike an object like a payload that we're pushing up on a post request and we can modify fields anddo stuff and coerce them. A parameter in a URL is always a string no matter what you do.
+            // and we can't change the string that came from the URL. /:id, here id is string
+            next(); // to next middleware / handler
+        } catch (e) {
+            if (e instanceof ZodError) {
+                return res.status(400).json({
+                    error: 'Invalid Params',
+                    details: e.issues.map(err => ({
+                        field: err.path.join("."),
+                        message: err.message
+                    }))
+                })
+            }
+            next(e);
+        }
+    }
+}
+
+export const validateQuery = (schema: ZodType) => {
+    return (req: Request, res: Response, next: NextFunction) => {
+        try {
+            schema.parse(req.query);
+            next(); // to next middleware / handler
+        } catch (e) {
+            if (e instanceof ZodError) {
+                return res.status(400).json({
+                    error: 'Invalid Query Params',
+                    details: e.issues.map(err => ({
+                        field: err.path.join("."),
+                        message: err.message
+                    }))
+                })
+            }
+
+            // If the error is not a ZodError, pass to next error middleware hanlder
+            next(e);
+        }
+    }
+}

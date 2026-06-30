@@ -265,3 +265,18 @@ Cron jobs
 
 88. What status code is typically returned when input validation fails?
 88. 400 (Bad Request), with a JSON object explaining the validation errors
+
+89. What is always true about URL parameters in web requests?
+89. Parameters in a URL are always strings, regardless of what data type they represent
+
+90. What is a recommended approach to handling database IDs to minimize string parsing?
+90. Using UUIDs instead of incremental IDs to avoid parsing strings to numbers in URLs
+
+91. What does query represent in web requests?
+91. An object containing key-value pairs of query variables
+
+92. Why might parameter validation seem redundant with Express?
+92. While Express guarantees a parameter's presence and string type, custom validation allows for additional checks like minimum or maximum length
+
+93. What is the potential issue with using next() inside a route handler?
+93. Using next() in a handler typically indicates that the route is not properly structured, and there is likely a better way to handle the logic
