@@ -25,7 +25,7 @@ const app = express();
 
 // middlewares
 app.use(morgan('dev', {
-    skip: () => isTest()
+    skip: () => isTest() // when test we don't want the log to be shown.
 }))
 app.use(helmet());
 const corsOptions: CorsOptions = {

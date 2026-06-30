@@ -1,4 +1,12 @@
 import { Router } from "express";
+import { validateBody } from "../../middleware/validation.ts";
+import { z } from "zod";
+
+// just the test schema
+const createHabitSchema = z.object({
+    name: z.string(),
+})
+
 
 export const habitRouter = Router();
 
@@ -10,7 +18,7 @@ habitRouter.get("/:id", (req, res) => {
     res.status(200).json({ status: 'ok', message: 'got one habit' })
 })
 
-habitRouter.post("/", (req, res) => {
+habitRouter.post("/", validateBody(createHabitSchema), (req, res) => {
     res.status(201).json({ status: 'ok', message: 'created habit' })
 })
 

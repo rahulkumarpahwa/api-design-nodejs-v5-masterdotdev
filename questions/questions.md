@@ -250,3 +250,18 @@ Cron jobs
 
 83. In which environments do CORS checks typically occur?
 83. CORS checks only occur in web browsers. API calls made from non-browser environments like terminals or Postman will not trigger CORS restrictions.
+
+84. What is the main purpose of input validation in an API?
+84. To protect against invalid inputs, prevent manual if-checks in handlers, and ensure that data meets expected criteria before processing
+
+85. What library is used in this example for schema validation?
+85. Zod, which allows defining schemas and parsing inputs against those schemas
+
+86. What are the three main arguments passed to a middleware function in Express?
+86. request, response, and next function
+
+87. Why might you reassign the validated data back to the request body after parsing?
+87. To capture potential defaults or coercions that the schema might apply, ensuring the body reflects the expected modifications
+
+88. What status code is typically returned when input validation fails?
+88. 400 (Bad Request), with a JSON object explaining the validation errors
