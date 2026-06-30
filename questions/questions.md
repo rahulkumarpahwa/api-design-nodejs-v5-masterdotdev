@@ -205,3 +205,18 @@ Cron jobs
 
 68. What potential issue must developers be cautious of when using Middleware?
 68. Developers must protect handlers from executing if Middleware has already responded to prevent serious routing and response issues.
+
+69. What is an Edge Function in the context of middleware?
+69. An Edge Function is a middleware that runs on a Content Delivery Network (CDN) before the request reaches the origin server, allowing for tasks like redirecting routes or modifying content before the main server is initiated.
+
+70. What is a common use case for HTTP interceptors in frontend middleware?
+70. Common use cases include automatically adding authentication tokens to every request without repeating code, and handling response scenarios like redirecting on a 401 unauthorized error.
+
+71. What is the key difference between middleware and a standard handler in Express.js?
+71. The key difference is the third argument next, which allows middleware functions to pass control to the next middleware in the stack by calling next().
+
+72. What happens if you call next() in a middleware function that has already sent a response?
+72. It doesn't make sense to continue through the request cycle after sending a response. If a response is sent, you should not call next().
+
+73. How are middleware functions executed in Express.js?
+73. Middleware functions are called in the order they are registered, from left to right. Calling next() moves to the next middleware in the stack, and if no middleware remains, it proceeds to the route handler.
