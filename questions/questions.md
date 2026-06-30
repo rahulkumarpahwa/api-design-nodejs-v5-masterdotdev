@@ -235,3 +235,18 @@ Cron jobs
 
 78. What must a middleware function do to continue request processing?
 78. A middleware function must either: call next() to continue to the next middleware, send a response using methods like res.json() or res.send(), or throw an error.
+
+79. What does CORS stand for and what is its primary purpose?
+79. CORS stands for Cross-Origin Resource Sharing, and its primary purpose is to protect users by preventing scripts on a website from accessing resources from a different origin without permission in web browsers.
+
+80. What typically happens during a CORS preflight check?
+80. During a CORS preflight check, the browser sends an OPTIONS request to the server, providing details about the origin attempting to access a URL and its headers. The server then responds with allowed headers and origins.
+
+81. Why would a middleware like Helmet be useful in an Express application?
+81. Helmet is a collection of security best practices for servers that sets appropriate headers to protect against common web application attacks.
+
+82. What are the purposes of Express.json() and Express.urlencoded() middleware?
+82. Express.json() ensures that request payloads can be accessed as objects, while Express.urlencoded() helps handle URL-encoded query strings in HTTP requests.
+
+83. In which environments do CORS checks typically occur?
+83. CORS checks only occur in web browsers. API calls made from non-browser environments like terminals or Postman will not trigger CORS restrictions.

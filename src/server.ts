@@ -1,5 +1,9 @@
 import express from 'express';
+import cors, { type CorsOptions } from "cors";
+import helmet from "helmet";
 import { v1Router } from './routes/v1/index.ts';
+import morgan from 'morgan';
+import { isTest } from '../env.ts';
 const app = express();
 
 // const apiTimeout = 10 * 1000;
@@ -18,6 +22,23 @@ const app = express();
 //     });
 //     next();
 // });
+
+// middlewares
+app.use(morgan('dev', {
+    skip: () => isTest()
+}))
+app.use(helmet());
+const corsOptions: CorsOptions = {
+    origin: ["https://localhost"],
+    methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
+    credentials: true,
+    optionsSuccessStatus: 200,
+};
+app.use(cors());
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+
+
 
 // Health check endpoint
 app.get('/health', (req, res) => {
