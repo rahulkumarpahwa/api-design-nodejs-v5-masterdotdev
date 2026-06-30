@@ -220,3 +220,18 @@ Cron jobs
 
 73. How are middleware functions executed in Express.js?
 73. Middleware functions are called in the order they are registered, from left to right. Calling next() moves to the next middleware in the stack, and if no middleware remains, it proceeds to the route handler.
+
+74. What are the two primary scenarios for calling next() in middleware?
+74. Checking or enhancing the request object without determining middleware flow, such as logging analytics. 2. Performing a 'Go/No-Go' check where next() is called based on a condition like authorization or access control.
+
+75. What happens if middleware does not call next(), respond, or throw an error?
+75. The request will hang indefinitely because the system won't know what to do. The middleware will wait without progressing or completing the request.
+
+76. What does passing an argument to next() signify in Express middleware?
+76. Passing any argument to next() is assumed to be an error. This tells Express to skip subsequent middleware and go directly to the error handler middleware.
+
+77. What is the recommended practice when responding inside middleware?
+77. Always call return after responding, unless it's the last line of code. This prevents subsequent code from running after the response has been sent.
+
+78. What must a middleware function do to continue request processing?
+78. A middleware function must either: call next() to continue to the next middleware, send a response using methods like res.json() or res.send(), or throw an error.
