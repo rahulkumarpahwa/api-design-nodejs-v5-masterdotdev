@@ -312,3 +312,18 @@ NOTE: Starting with Express 5, route handlers and middleware that return a Promi
 
 103. What is a Foreign Key in a relational database?
 103. A Foreign Key is a key from another table that references a relationship between tables. For example, in a one-to-one relationship like a person with one house, the Foreign Key can be placed on either the user's table or the home table.
+ 
+104. What is an ORM in the context of database interactions?
+104.  An ORM (Object-Relational Mapping) is essentially an SDK for a database that provides an abstraction layer for interacting with databases, offering type-safe and easy-to-use functions without needing to write low-level SQL queries directly.
+
+105. What unique features does PostgreSQL offer for database management?
+105. PostgreSQL supports multiple advanced features including JSON arrays, custom data types, full-text search, geospatial search (GIS), complex query handling, and is open-source with extensive ecosystem support.
+
+106. What are the primary advantages of using an ORM?
+106. ORMs provide type safety, help prevent SQL injection, simplify database interactions, abstract away complex SQL queries, and offer easy-to-use functions for database operations without requiring deep SQL expertise.
+
+107. How do ORMs improve database interactions compared to raw SQL?
+107. ORMs provide a higher-level abstraction that allows developers to interact with databases using programming language constructs, offering type safety, easier query management, and reducing the need to write low-level SQL queries manually.
+
+108. Why are ORMs considered beneficial for database management?
+108. ORMs simplify database interactions by providing an SDK-like interface, offering type safety, preventing common issues like SQL injection, and allowing developers to work with databases without needing extensive SQL knowledge.
