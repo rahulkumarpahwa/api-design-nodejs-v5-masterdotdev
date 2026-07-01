@@ -327,3 +327,18 @@ NOTE: Starting with Express 5, route handlers and middleware that return a Promi
 
 108. Why are ORMs considered beneficial for database management?
 108. ORMs simplify database interactions by providing an SDK-like interface, offering type safety, preventing common issues like SQL injection, and allowing developers to work with databases without needing extensive SQL knowledge.
+
+109. What are migrations in the context of databases?
+109. Migrations are a method of version control for databases that allow changing the database schema and data structure while maintaining compatibility with existing data, essentially acting as a contract for how data is stored and transformed.
+
+110. What is the difference between destructive and non-destructive database changes?
+110. Non-destructive changes include adding an optional field, while destructive changes involve renaming or deleting fields. Non-destructive changes are preferred as they cause minimal disruption and complexity in migrations.
+
+111. What are the two primary types of migrations in database management?
+111. Schema migrations involve changing the structure of database objects like tables, columns, and indexes. Data migrations involve transforming existing data to match a new schema structure when changes affect the data itself.
+
+112. What are the typical steps in a database migration workflow?
+112. Make schema changes in code, 2. Create migration files, 3. Inspect and review the migration plan, 4. Run migrations against the database, 5. Test outside of production before deploying
+
+113. Why are migrations crucial in maintaining database integrity?
+113. Migrations prevent inconsistencies between database versions and application expectations, ensuring that code does not break when database structures change and allowing controlled, systematic updates to database schemas and data.
