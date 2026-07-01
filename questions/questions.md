@@ -297,3 +297,18 @@ NOTE: Starting with Express 5, route handlers and middleware that return a Promi
 
 98. What is a potential issue with running background work after responding to a request?
 98. Running background work after responding can create race conditions, lose error handling capabilities, and make tracking completion difficult, so it should only be done for simple tasks like logging or analytics
+
+99. What defines a relational database according to the concept discussed?
+99. A relational database is a database with fixed columns, where data have dependencies on each other, particularly around ownership models. Tables represent collections of objects, with unique keys and indexes showing relationships between data.
+
+100. What are the key components of a relational database schema?
+100. The key components are tables (collections of objects), rows (individual objects), columns (fields on objects), Primary Keys (unique identifiers), and Foreign Keys (references to relationships between tables).
+
+101. What are the types of relationships in a relational database?
+101. The types of relationships are one-to-one, one-to-many, and many-to-many. These define how different data entities are connected and interact with each other in the database schema.
+
+102. How does domain-driven development approach data modeling?
+102. Domain-driven development focuses on critical user journeys, breaking down an application into different user experiences with a defined start and end. It identifies the data needed to complete each journey and how those data relate to each other.
+
+103. What is a Foreign Key in a relational database?
+103. A Foreign Key is a key from another table that references a relationship between tables. For example, in a one-to-one relationship like a person with one house, the Foreign Key can be placed on either the user's table or the home table.
