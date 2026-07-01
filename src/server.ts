@@ -1,4 +1,5 @@
 import express from 'express';
+import type { Request, Response, NextFunction } from 'express';
 import cors, { type CorsOptions } from "cors";
 import helmet from "helmet";
 import { v1Router } from './routes/v1/index.ts';
@@ -38,8 +39,6 @@ app.use(cors());
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 
-
-
 // Health check endpoint
 app.get('/health', (req, res) => {
     res.status(200).json({ status: 'OK', timestamp: new Date().toISOString(), service: 'Habit Tracker API' });
@@ -55,6 +54,13 @@ app.use("/api/v1/*path", (req, res) => {
         timestamp: new Date().toISOString(),
     })
 })
+
+// Error handling middleware
+const errorHandler = (err: Error, req: Request, res: Response, next: NextFunction) => {
+    console.error(err.stack)
+    res.status(500).json({ error: 'Something went wrong!' })
+}
+app.use(errorHandler)
 
 // export for the test
 export { app }

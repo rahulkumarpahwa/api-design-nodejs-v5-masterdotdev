@@ -280,3 +280,20 @@ Cron jobs
 
 93. What is the potential issue with using next() inside a route handler?
 93. Using next() in a handler typically indicates that the route is not properly structured, and there is likely a better way to handle the logic
+
+NOTE: Starting with Express 5, route handlers and middleware that return a Promise will call next(value) automatically when they reject or throw an error.
+
+94. What is a common pitfall when working with Middleware in Express-like frameworks?
+94. Forgetting to call 'next()' will cause the middleware chain to hang, and incorrect middleware order (such as trying to parse JSON before body parsing) can prevent accessing request body properties
+
+95. What is a recommended practice when responding in a middleware function?
+95. If you are going to respond, put a return statement in front of the response to prevent further code execution, and avoid calling 'next()' after sending a response
+
+96. What problem does a Middleware factory solve?
+96. A Middleware factory allows wrapping middleware in a promise and automatically handling errors, eliminating the need to write repetitive try-catch error handling logic in each middleware function
+
+97. What happens if you attempt to send headers or respond multiple times in a middleware function?
+97. Technically, you cannot send headers more than once, and attempting to do so will result in an error
+
+98. What is a potential issue with running background work after responding to a request?
+98. Running background work after responding can create race conditions, lose error handling capabilities, and make tracking completion difficult, so it should only be done for simple tasks like logging or analytics
