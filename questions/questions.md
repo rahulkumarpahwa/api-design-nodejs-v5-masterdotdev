@@ -342,3 +342,18 @@ NOTE: Starting with Express 5, route handlers and middleware that return a Promi
 
 113. Why are migrations crucial in maintaining database integrity?
 113. Migrations prevent inconsistencies between database versions and application expectations, ensuring that code does not break when database structures change and allowing controlled, systematic updates to database schemas and data.
+
+114. What is the purpose of a unique index in a database schema?
+114. A unique index allows quick data retrieval and ensures that no two records have the same value in the indexed column, preventing duplicate entries like emails. It helps locate data quickly in constant time without scanning the entire table.
+
+115. What is the primary purpose of using UUID as a primary key?
+115. UUID (Universally Unique Identifier) serves as a unique, randomly generated identifier for database records, providing a globally unique value that can be generated without potential conflicts across different systems or databases.
+
+116. What are the typical considerations when defining a VARCHAR column in a database schema?
+116. When defining a VARCHAR column, key considerations include setting a maximum length constraint, specifying nullability (such as not null), and potentially adding unique constraints. VARCHAR allows text storage with a specified maximum character length.
+
+117. How does a foreign key relationship work in a database schema?
+117. A foreign key creates a link between two tables by referencing the primary key of another table, establishing a relationship. In this schema, it allows actions like cascade delete and enables querying related entities across different tables.
+
+118. What is the benefit of using a join table for managing many-to-many relationships?
+118. A join table allows flexible and normalized data storage by creating connections between two entities, enabling bidirectional querying. It helps manage complex relationships by storing links between related tables without directly embedding foreign keys.
