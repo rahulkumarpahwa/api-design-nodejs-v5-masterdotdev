@@ -357,3 +357,18 @@ NOTE: Starting with Express 5, route handlers and middleware that return a Promi
 
 118. What is the benefit of using a join table for managing many-to-many relationships?
 118. A join table allows flexible and normalized data storage by creating connections between two entities, enabling bidirectional querying. It helps manage complex relationships by storing links between related tables without directly embedding foreign keys.
+
+119. In Drizzle ORM, how can you define a one-to-many relationship between users and habits?
+119. Use the relations helper method, specify 'many' for habits, and return an object defining the relationship. For example: { habits: relations.many(habits) } which allows querying a user's habits
+
+120. What are the fields used to link a habit to a user in a database relationship?
+120. habits.user_id references users.id, creating a one-to-many relationship where each habit belongs to one user
+
+121. How does Drizzle ORM handle the many-to-many relationship between habits and tags?
+121. Through a joint table (habit_tags) that allows connecting a single habit to a single tag, using habit_tags.habit_id referencing habits.id and habit_tags.tag_id referencing tags.id
+
+122. What types of relationships can a habit have in this database schema?
+122. A habit can have: one user (many-to-one), many entries (one-to-many), and many tags (many-to-many)
+
+123. What is the purpose of creating a new 'user' field on the habits table?
+123. To allow direct access to the user object associated with a habit, beyond just having a user_id foreign key

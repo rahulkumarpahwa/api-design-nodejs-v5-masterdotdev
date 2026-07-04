@@ -1,6 +1,8 @@
 import { pgTable, uuid, varchar, text, timestamp, boolean, integer } from "drizzle-orm/pg-core"
 import { relations } from "drizzle-orm"
 
+// Another way to think of it: Drizzle has two separate APIs for queries - an SQL-like API and a relational API. The SQL-like API doesn't require defining - you can write queries that look like SQL with just the core schema. However, you must define relations to use the relational API, which offers Prisma-like syntax that abstracts the SQL away completely with methods like findOne or findMany.
+
 export const users = pgTable('users', {
     id: uuid('id').primaryKey().defaultRandom(),
     email: varchar('email ', { length: 255 }).notNull().unique(),
@@ -46,3 +48,38 @@ export const habitTags = pgTable('habitTags', {
     tagId: uuid('tag_id').references(() => tags.id, { onDelete: 'cascade' }).notNull(),
     createdAt: timestamp("created_at").defaultNow().notNull(),
 })
+
+export const userRelations = relations(users, ({ many }) => ({
+    habits: many(habits)
+}))
+
+export const habitRelations = relations(habits, ({ one, many }) => ({
+    user: one(users, {
+        fields: [habits.userId],
+        references: [users.id],
+    }),
+    entries: many(entries),
+    habitTags: many(habitTags)
+}))
+
+export const entriesRelations = relations(entries, ({ one }) => ({
+    habit: one(habits, {
+        fields: [entries.habitId],
+        references: [habits.id]
+    })
+}))
+
+export const tagsRelations = relations(tags, ({ many }) => ({
+    habitTags: many(habitTags),
+}))
+
+export const habitTagsRelation = relations(habitTags, ({ one }) => ({
+    habit: one(habits, {
+        fields: [habitTags.habitId],
+        references: [habits.id]
+    }),
+    tag: one(tags, {
+        fields: [habitTags.tagId],
+        references: [tags.id]
+    })
+}))
