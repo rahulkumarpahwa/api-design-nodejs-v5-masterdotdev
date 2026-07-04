@@ -1,5 +1,6 @@
 import { pgTable, uuid, varchar, text, timestamp, boolean, integer } from "drizzle-orm/pg-core"
 import { relations } from "drizzle-orm"
+import { createInsertSchema, createSelectSchema } from "drizzle-zod"
 
 // Another way to think of it: Drizzle has two separate APIs for queries - an SQL-like API and a relational API. The SQL-like API doesn't require defining - you can write queries that look like SQL with just the core schema. However, you must define relations to use the relational API, which offers Prisma-like syntax that abstracts the SQL away completely with methods like findOne or findMany.
 
@@ -83,3 +84,12 @@ export const habitTagsRelation = relations(habitTags, ({ one }) => ({
         references: [tags.id]
     })
 }))
+
+export type User = typeof users.$inferSelect
+export type Habit = typeof habits.$inferSelect
+export type Entry = typeof entries.$inferSelect
+export type Tag = typeof tags.$inferSelect
+export type HabitTag = typeof habitTags.$inferSelect
+
+export const insertUserSchema = createInsertSchema(users)
+export const selectUserSchema = createSelectSchema(users)

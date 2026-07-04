@@ -372,3 +372,18 @@ NOTE: Starting with Express 5, route handlers and middleware that return a Promi
 
 123. What is the purpose of creating a new 'user' field on the habits table?
 123. To allow direct access to the user object associated with a habit, beyond just having a user_id foreign key
+
+124. What is the purpose of using type of with Drizzle schema's infer select?
+124. To create a TypeScript type with the same fields as a database table, which can be used throughout the application for type inference and consistency
+
+125. What is the difference between an insert user schema and a select user schema?
+125. An insert user schema defines the required fields for creating a new user, while a select user schema represents the fields returned when querying a user, which typically includes additional metadata like ID, created at, and updated at
+
+126. What libraries are being imported for schema and type generation?
+126. Drizzle for creating insert and select schemas, and Zod for runtime validation of input schemas
+
+127. What are the minimum required fields for creating a user according to the described schema?
+127. An email (unique), a username (unique), and a password
+
+128. What are the benefits of using runtime schema validation?
+128. To ensure that input objects follow the database schema, validate data at runtime in addition to TypeScript type checking, and enforce data integrity before database insertion
