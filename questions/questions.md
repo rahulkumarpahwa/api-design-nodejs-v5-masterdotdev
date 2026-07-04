@@ -387,3 +387,18 @@ NOTE: Starting with Express 5, route handlers and middleware that return a Promi
 
 128. What are the benefits of using runtime schema validation?
 128. To ensure that input objects follow the database schema, validate data at runtime in addition to TypeScript type checking, and enforce data integrity before database insertion
+
+129. What are two recommended best practices for database schema design?
+129. Always add timestamps for tracking creation and modification times, 2. Enforce constraints at the database level such as unique, not null, and foreign keys
+
+130. What is normalization in database schema design?
+130. Normalization involves choosing where to place foreign keys based on query patterns, optimizing the schema for the most frequent querying side while avoiding excessive backend logic refactoring
+
+131. When should database schemas be used for validation?
+131. Use schema validation when all fields satisfying the schema's constraints will be supplied by the user. Do not use schema validation for fields automatically provided by the system
+
+132. What is the recommended approach for handling destructive schema changes?
+132. Make changes additively: first add the new field, get it into production, then gradually migrate data and stop using the old field
+
+133. What are the benefits of using enums in database schema design?
+133. Enums restrict values to a predefined set, provide normalization, and make it easier for frontend developers to understand expected input values
