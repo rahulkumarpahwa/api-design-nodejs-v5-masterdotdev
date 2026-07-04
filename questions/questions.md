@@ -402,3 +402,18 @@ NOTE: Starting with Express 5, route handlers and middleware that return a Promi
 
 133. What are the benefits of using enums in database schema design?
 133. Enums restrict values to a predefined set, provide normalization, and make it easier for frontend developers to understand expected input values
+
+134. What is the purpose of database connection pooling?
+134. To reuse database connections across requests, reducing computational expense of creating new connections each time and managing the limited number of connections a database can handle
+
+135. What potential issue can occur with connection pooling during development with Node watch?
+135. Memory leaks can occur when the server restarts, leaving previous pool connections open, which can eventually lead to reaching the connection limit
+
+136. What is Neon in the context of this discussion?
+136. A company that provides hosted, managed Postgres databases with a product called Launchpad that allows creating free databases quickly
+
+137. What steps are needed to set up a database connection using Drizzle ORM?
+137. Create a pool using pg, use a singleton pattern for development, create a database client with Drizzle ORM, pass in the connection client and database schema
+
+138. What libraries are typically imported when setting up a database connection with Drizzle ORM?
+138. Import Drizzle from drizzle-orm/node-postgres, pool from pg, database schema, environment variables, and utility helpers like isProd and Remember

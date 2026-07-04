@@ -10,7 +10,7 @@ const isDevelopment = process.env.APP_STAGE === 'dev';
 const isTesting = process.env.APP_STAGE === 'test';
 
 if (isDevelopment) {
-    loadEnv('example'); // Load .env.example for development
+    loadEnv(); // Load .env.example for development
 } else if (isTesting) {
     loadEnv('test'); // Load .env.test for testing
 } else if (isProduction) {
