@@ -417,3 +417,18 @@ NOTE: Starting with Express 5, route handlers and middleware that return a Promi
 
 138. What libraries are typically imported when setting up a database connection with Drizzle ORM?
 138. Import Drizzle from drizzle-orm/node-postgres, pool from pg, database schema, environment variables, and utility helpers like isProd and Remember
+
+139. What does the 'db:push' script do in the context of database management?
+139. It pushes the current schema directly to the database without caring about existing data, similar to pushing directly to main in Git. It's recommended for development but not for production environments.
+
+140. What is the purpose of the 'db:generate' script in Drizzle Kit?
+140. The 'db:generate' script creates SQL files for migrations, allowing you to prepare and track database schema changes over time.
+
+141. What functionality does the 'db:studio' command provide?
+141. The 'db:studio' command starts Drizzle's web app, a visual database explorer that allows you to visualize your database, view data, add data, run raw SQL, and interact with your database schema.
+
+142. What is the difference between 'db:push' and 'db:migrate'?
+142. 'db:push' directly applies schema changes to the database without careful data merging, while 'db:migrate' carefully runs saved migrations, typically used for production databases to ensure data integrity.
+
+143. What is the purpose of the 'db:seed' script?
+143. The 'db:seed' script runs a file that populates the database with initial or test data, helping to set up a consistent starting state for the database.
