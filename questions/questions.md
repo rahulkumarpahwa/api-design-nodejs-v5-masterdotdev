@@ -447,3 +447,18 @@ NOTE: Starting with Express 5, route handlers and middleware that return a Promi
 
 148. How can a seed script be executed?
 148. A seed script can be run directly from the terminal or imported and called programmatically in other code, using Node.js module detection to determine its execution context
+
+149. What is the purpose of the check with ARGV at the end of a seeding script?
+149. To prevent the script from automatically running when imported into another file, allowing programmatic execution from the terminal while avoiding unintended automatic runs
+
+150. What are some recommended approaches for managing seed data in a project?
+150. Options include using a seed folder with scenario-specific files, generating fake data with tools like Faker, using JSON files, exporting/importing from databases, or creating branches of production databases with existing data
+
+151. What potential issue can occur when making schema changes in a database?
+151. Destructive changes like renaming a required field can cause problems. In production, migrations should be generated and carefully applied to avoid data loss
+
+152. What is the recommended workflow for database schema changes during development?
+152. Use DB Push to test changes continuously, and once a feature is complete and ready for a pull request, generate a single migration file instead of creating multiple migration files for every small change
+
+153. What considerations are important when seeding data for testing specific scenarios?
+153. Create targeted seed data that mimics specific use cases, such as seeding a database with one user having 30 habits to test UI features like pagination

@@ -5,7 +5,6 @@ import { users, habits, habitTags, entries, tags } from "../db/schema.ts"
 export const seed = async () => {
     // Your seeding logic here
     console.log("Seeding the database...");
-    // Example: await db.collection('users').insertMany([{ name: 'John Doe' }, { name: 'Jane Doe' }]);
 
     try {
         db.delete(users);
