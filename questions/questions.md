@@ -432,3 +432,18 @@ NOTE: Starting with Express 5, route handlers and middleware that return a Promi
 
 143. What is the purpose of the 'db:seed' script?
 143. The 'db:seed' script runs a file that populates the database with initial or test data, helping to set up a consistent starting state for the database.
+
+144. What is a seed script in the context of database management?
+144. A seed script is a way of populating a database with data for various purposes such as testing features, developing front-end interfaces, or simulating data scenarios using fake or curated data.
+
+145. What are three common methods for seeding a database?
+145. Using fake data generation tools like Faker.js, 2. Hand-creating or hand-selecting data, 3. Importing production or staging database dumps
+
+146. What is a critical precaution when running a seed script?
+146. Never run a seed script on a production database, and avoid storing production database credentials locally on your computer
+
+147. What is typically the first step in a seed script?
+147. Clearing all existing data from the database tables to ensure a clean slate for seeding new data
+
+148. How can a seed script be executed?
+148. A seed script can be run directly from the terminal or imported and called programmatically in other code, using Node.js module detection to determine its execution context

@@ -91,5 +91,5 @@ export type Entry = typeof entries.$inferSelect
 export type Tag = typeof tags.$inferSelect
 export type HabitTag = typeof habitTags.$inferSelect
 
-export const insertUserSchema = createInsertSchema(users)
-export const selectUserSchema = createSelectSchema(users)
+export const insertUserSchema = createInsertSchema(users) // This creates a Zod schema for inserting a new user into the database. It will validate the input data against the defined structure of the `users` table, ensuring that all required fields are present and correctly formatted before attempting to insert the data into the database.
+export const selectUserSchema = createSelectSchema(users) // This creates a Zod schema for selecting a user from the database. It will validate the output data against the defined structure of the `users` table, ensuring that the data retrieved from the database matches the expected format.
