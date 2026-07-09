@@ -496,3 +496,18 @@ Repeat the hashing process multiple times (typically 10-12 rounds)
 
 163. How should unique constraints like email uniqueness be handled during user sign-up?
 163. Use database unique indexes instead of manually querying to check for existing entries, which would be inefficient for large user databases.
+
+164. What is the purpose of creating a controllers folder in an Express application?
+164. Controllers (or handlers) contain the functions that are executed when specific routes are accessed, defining the logic for handling HTTP requests and responses
+
+165. What two primary imports are needed for creating an Express route handler function?
+165. Express request and response types, which allow type checking and proper handling of HTTP request and response objects
+
+166. Why is it important to make password hashing an async function?
+166. To prevent timing attacks, where attackers might measure hashing time to gain insights about the password or system
+
+167. What are the typical HTTP status codes used for handling registration errors?
+167. 500 status code for system-level errors, and 400 status code for user-related errors like duplicate email registrations
+
+168. What is the primary benefit of implementing middleware and validation checks before a controller function?
+168. It allows the controller to make assumptions and simplifies code by reducing the need for extensive validation if-statements within the controller function
