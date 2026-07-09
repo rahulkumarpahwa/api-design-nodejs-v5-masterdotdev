@@ -462,3 +462,18 @@ NOTE: Starting with Express 5, route handlers and middleware that return a Promi
 
 153. What considerations are important when seeding data for testing specific scenarios?
 153. Create targeted seed data that mimics specific use cases, such as seeding a database with one user having 30 habits to test UI features like pagination
+
+154. What are the three key components of user access management in an API?
+154. Identification (who you are), Authentication (proving access rights), and Authorization (determining specific allowed actions)
+
+155. What is the purpose of Role-Based Access Control (RBAC)?
+155. To define roles with specific permissions, specifying exactly what actions and resources each role can access, such as member, owner, admin, or teammate
+
+156. What are the main differences between session-based and JWT authentication?
+156. Session-based authentication stores state server-side and tracks logins across devices, while JWT is stateless with tokens stored on the client and requires token verification on each request
+
+157. What is the primary difference between authentication and authorization?
+157. Authentication proves access rights to an API (e.g., matching email and password), while authorization determines specific actions an authenticated user is allowed to perform
+
+158. What are some common methods of authentication?
+158. Passwords, token-based methods, multi-factor authentication (MFA), API keys, and JSON Web Tokens (JWT)
