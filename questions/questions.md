@@ -477,3 +477,22 @@ NOTE: Starting with Express 5, route handlers and middleware that return a Promi
 
 158. What are some common methods of authentication?
 158. Passwords, token-based methods, multi-factor authentication (MFA), API keys, and JSON Web Tokens (JWT)
+
+159. What are the key steps in the bcrypt password hashing process?
+159. Take the password
+Generate a random salt
+Combine the password with the salt
+Apply an encryption algorithm (like blowfish)
+Repeat the hashing process multiple times (typically 10-12 rounds)
+
+160. Why should passwords not be stored in plain text?
+160. To protect against potential data breaches and ensure that even engineers cannot see the original password value. Hashing obfuscates the password and provides a layer of security.
+
+161. What is the primary strategy for user sign-up?
+161. Validate user input based on database schema requirements, check that unique elements are not already taken (using unique indexes), hash passwords, and generate a JSON Web Token for API access.
+
+162. What is the goal of password hashing?
+162. To create a strong, reproducible hash that is computationally difficult to reverse but consistent when using the same inputs, while ensuring the ability to verify user credentials during sign-in.
+
+163. How should unique constraints like email uniqueness be handled during user sign-up?
+163. Use database unique indexes instead of manually querying to check for existing entries, which would be inefficient for large user databases.
