@@ -511,3 +511,18 @@ Repeat the hashing process multiple times (typically 10-12 rounds)
 
 168. What is the primary benefit of implementing middleware and validation checks before a controller function?
 168. It allows the controller to make assumptions and simplifies code by reducing the need for extensive validation if-statements within the controller function
+
+169. What is a JSON Web Token (JWT) fundamentally?
+169. A JSON Web Token is an object converted to a string based on an algorithm, which can be encoded and later decoded back to the original object, typically used for securely transmitting information between parties
+
+170. What unique user attributes are recommended to include in a JWT payload?
+170. Recommended unique user attributes include user ID, email, and username - identifiers that help safely identify the user without including sensitive information like passwords
+
+171. Why is setting an expiration time important for JSON Web Tokens?
+171. Setting an expiration time prevents tokens from living forever, which reduces the risk of unauthorized access if a token is compromised
+
+172. What cryptographic algorithm is typically used by default for signing JWTs?
+172. HS256 (HMAC with SHA-256) is the default algorithm used for signing JSON Web Tokens
+
+173. What types of sensitive information should NOT be included in a JWT payload?
+173. Sensitive information like passwords and credit card numbers should not be included in a JWT payload to maintain security
