@@ -526,3 +526,18 @@ Repeat the hashing process multiple times (typically 10-12 rounds)
 
 173. What types of sensitive information should NOT be included in a JWT payload?
 173. Sensitive information like passwords and credit card numbers should not be included in a JWT payload to maintain security
+
+174. What is Zod used for in input validation?
+174. Zod allows runtime validation with more granular checks like regex password validation and email format verification, which are too inefficient to perform at the database level
+
+175. How can Zod schemas be created for database validation?
+175. Zod schemas can be created directly from database schemas using tools like Drizzle, or can be custom-built with additional validation checks
+
+176. What is a refresh token in authentication?
+176. A refresh token is a JSON Web Token without an expiration date that can be used to generate a new authentication token when the original token expires, providing a seamless login experience
+
+177. Why is runtime validation important for user registration?
+177. Runtime validation ensures data integrity by checking input requirements like presence of email, username, password, and can perform additional checks like format validation before database insertion
+
+178. What validation errors are returned when registering a user?
+178. Validation errors include missing required fields like email, username, and password, which can be directly displayed to users in form validation feedback

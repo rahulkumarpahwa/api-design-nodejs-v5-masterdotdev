@@ -4,9 +4,12 @@ import { createInsertSchema, createSelectSchema } from "drizzle-zod"
 
 // Another way to think of it: Drizzle has two separate APIs for queries - an SQL-like API and a relational API. The SQL-like API doesn't require defining - you can write queries that look like SQL with just the core schema. However, you must define relations to use the relational API, which offers Prisma-like syntax that abstracts the SQL away completely with methods like findOne or findMany.
 
-export const users = pgTable('users', {
+// NOTE : please check for the sapces in the name of the fields here defined in string below to store in DB has not space.
+
+
+export const users = pgTable('users', { 
     id: uuid('id').primaryKey().defaultRandom(),
-    email: varchar('email ', { length: 255 }).notNull().unique(),
+    email: varchar('email', { length: 255 }).notNull().unique(), 
     username: varchar('username', { length: 50 }).notNull().unique(),
     password: varchar('password', { length: 255 }).notNull(),
     firstName: varchar('first_name', { length: 255 }),

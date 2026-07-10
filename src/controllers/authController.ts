@@ -33,9 +33,13 @@ export const register = async (req: Request<{}, {}, NewUser>, res: Response) => 
             token,  // User is logged in immediately
         })
         return;
-    } catch (e) {
-        console.log(`Resgitration Error : ${e}`)
-        res.status(500).json({ message: "Registration Failed", error: e })
+    } catch (error : any) {
+        console.log(`Resgitration Error : ${error}`)
+        console.error(error);
+        console.error(error.message);
+        console.error(error.cause);
+        console.error(error.stack);
+        res.status(500).json({ message: "Registration Failed", error })
         return;
     }
 }

@@ -15,7 +15,7 @@ export const generateSecret = async () : Promise<crypto.KeyObject> => {
 export const generateJWT = async (payload: JWTPld): Promise<string> => {
     const secret = await generateSecret()
     return new SignJWT(payload)
-        .setProtectedHeader({ alg: 'H256' })
+        .setProtectedHeader({ alg: 'HS256' })
         .setIssuedAt()
         .setExpirationTime(env.JWT_EXPIRES_IN || '7d')
         .sign(secret)
