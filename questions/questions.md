@@ -541,3 +541,18 @@ Repeat the hashing process multiple times (typically 10-12 rounds)
 
 178. What validation errors are returned when registering a user?
 178. Validation errors include missing required fields like email, username, and password, which can be directly displayed to users in form validation feedback
+
+179. What method from Drizzle ORM can be used to find a user by email?
+179. The eq function can be used with find first method to find a user by email
+
+180. Why is it recommended to respond with 'invalid credentials' instead of specifying whether an email exists?
+180. To prevent potential attackers from gathering information about existing accounts and reduce the risk of identity theft
+
+181. What tool can be used for input validation in the sign-in process?
+181. Zod can be used to validate email and password inputs, with optional validation for email format and password complexity
+
+182. How should user data be handled when sending a response after successful login?
+182. Create a new object that does not include the hashed password to prevent sending sensitive information
+
+183. What approach is recommended for handling login errors?
+183. Most errors in the login flow would be considered server errors (500 status), such as database query failures, password comparison issues, or token generation problems
