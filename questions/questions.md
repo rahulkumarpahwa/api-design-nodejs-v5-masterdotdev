@@ -556,3 +556,18 @@ Repeat the hashing process multiple times (typically 10-12 rounds)
 
 183. What approach is recommended for handling login errors?
 183. Most errors in the login flow would be considered server errors (500 status), such as database query failures, password comparison issues, or token generation problems
+
+184. What is the bearer token pattern in HTTP authentication?
+184. A pattern where a JSON Web Token is attached to the Authorization header, with the value being the word 'bearer' followed by the token, which allows the server to verify and authenticate each request
+
+185. What is the purpose of HTTP headers?
+185. Headers are key-value metadata objects that provide additional information about a request, such as origin, caching strategies, authorization credentials, and custom information
+
+186. How does token verification work in JWT authentication?
+186. Token verification checks that the token is not expired, was signed with the same secret key, and decodes the token back into its original payload object containing user information like ID, email, and username
+
+187. What environment variable is used for JWT secret key?
+187. JWT_SECRET is the environment variable used to store the secret key for signing and verifying JSON Web Tokens
+
+188. What encoding is typically used when working with JWT secret keys?
+188. UTF-8 encoding is typically used when handling JWT secret keys
