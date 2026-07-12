@@ -586,3 +586,18 @@ Repeat the hashing process multiple times (typically 10-12 rounds)
 
 193. How is the bearer token extracted from the Authorization header?
 193. By splitting the header value, since bearer tokens are typically formatted as 'Bearer [token]'
+
+194. Why can't authentication middleware be applied globally in a web application?
+194. Applying authentication middleware globally would block all routes, including public routes like sign-up, which should remain accessible to everyone
+
+195. What are the two extra headers added when signing a JWT token?
+195. 'iat' (initialized at) and 'exp' (expires), which can be used to check token expiration or invalidate tokens during a security breach
+
+196. Why is authentication necessary for routes related to habits and users?
+196. Habits belong to specific users, and without authentication, it would be impossible to associate habits with the correct user and prevent unauthorized access to all database entries
+
+197. How can authentication be added to routes in a web application?
+197. Authentication can be added by either putting middleware on each route or adding authentication at the router level using methods like router.use with an authenticate token middleware
+
+198. What status code is returned when a request is made without proper authentication?
+198. A 401 unauthorized status code is returned when a request is made without proper authentication

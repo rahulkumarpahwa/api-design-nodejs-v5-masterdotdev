@@ -1,6 +1,7 @@
 import { Router } from "express";
 import { validateBody, validateParams } from "../../middleware/validation.ts";
 import { z } from "zod";
+import { authenticateToken } from "../../middleware/auth.ts";
 
 // just the test schema
 const createHabitSchema = z.object({
@@ -12,6 +13,10 @@ const completeParansSchema = z.object({
 })
 
 export const habitRouter = Router();
+
+
+habitRouter.use(authenticateToken)
+
 
 habitRouter.get("/", (req, res) => {
     res.status(200).json({ status: 'ok', message: 'habits' })

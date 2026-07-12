@@ -9,16 +9,15 @@ export interface AuthenticatedRequest extends Request {
 export const authenticateToken = async (req: AuthenticatedRequest, res: Response, next: NextFunction) => {
     try {
         const authHeader = req.headers.authorization;
-        if (authHeader && authHeader.startsWith('Bearer ')) {
-            const token = authHeader.split(' ')[1];
-            if(!token){
-                return res.status(401).json({error: "Bad Request"})
-            }
-            const payload = await verifyJWT(token);
-            req.user = payload;
-            next()
+        const token = authHeader && authHeader.split(' ')[1];
+        if (!token) {
+            return res.status(401).json({ error: "Bad Request" })
         }
+        const payload = await verifyJWT(token);
+        req.user = payload;
+        console.log(payload)
+        next()
     } catch (e) {
-        return res.status(403).json({error: "Forbidden"})
+        return res.status(403).json({ error: "Forbidden" })
     }
 }
