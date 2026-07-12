@@ -1,4 +1,4 @@
-import { SignJWT, type JWTPayload, jwtVerify } from 'jose'
+import { SignJWT, type JWTPayload, jwtVerify, type JWTVerifyResult } from 'jose'
 import env from '../../env.ts'
 import crypto from "node:crypto"
 
@@ -22,7 +22,8 @@ export const generateJWT = async (payload: JWTPld): Promise<string> => {
 }
 
 
-export const verifyJWT = async (jwt: string) => {
+export const verifyJWT = async (jwt: string) : Promise<JWTPld> => {
     const secret = await generateSecret()
-    return jwtVerify(jwt, secret)
+    const {payload } = await jwtVerify(jwt, secret) 
+    return payload as JWTPld;
 }

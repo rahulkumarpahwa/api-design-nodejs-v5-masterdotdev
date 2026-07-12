@@ -571,3 +571,18 @@ Repeat the hashing process multiple times (typically 10-12 rounds)
 
 188. What encoding is typically used when working with JWT secret keys?
 188. UTF-8 encoding is typically used when handling JWT secret keys
+
+189. What is the purpose of creating an AuthenticatedRequest interface in TypeScript?
+189. To extend the Express request object and allow attaching a user property, enabling type-safe access to authenticated user information in controllers
+
+190. What are the key steps in the authentication middleware token verification strategy?
+190. Check Authorization header for bearer token, 2. Extract JWT token, 3. Verify token, 4. Attach user to request if verified, 5. Call next(), 6. Deny access if verification fails
+
+191. How does the middleware handle scenarios where no authentication token is present?
+191. It returns a bad request status, indicating the client did not provide authentication
+
+192. What status code is returned when token verification fails?
+192. 403 Forbidden status
+
+193. How is the bearer token extracted from the Authorization header?
+193. By splitting the header value, since bearer tokens are typically formatted as 'Bearer [token]'
