@@ -601,3 +601,20 @@ Repeat the hashing process multiple times (typically 10-12 rounds)
 
 198. What status code is returned when a request is made without proper authentication?
 198. A 401 unauthorized status code is returned when a request is made without proper authentication
+
+Note: Express.js v5 automatically intercepts errors thrown in async functions and forwards them to the error handling middleware, so writing try-catch just to call next(error) is no longer necessary.
+
+199. What are two approaches to handling authentication middleware at different levels of routing?
+199. Router-level middleware (protecting entire router subtree) and route-level middleware (protecting individual routes), with router-level being more clean and consistent
+
+200. List three security best practices when handling authentication tokens
+200. Never log tokens, 2) Use HTTPS in production, 3) Set reasonable token expiration dates, 4) Validate authentication on every request, 5) Do not cache authentication state
+
+201. What potential issue can arise when creating an allow list of routes in middleware?
+201. Route references might exist in multiple places, which can cause maintenance problems if route names change. This can be mitigated by using constants for route names.
+
+202. What prefix is important to remember when sending authentication tokens?
+202. The 'Bearer' prefix should be included with tokens
+
+203. After authentication middleware, what becomes available in request objects?
+203. req.user becomes available, allowing safe methods for retrieving user-specific data
