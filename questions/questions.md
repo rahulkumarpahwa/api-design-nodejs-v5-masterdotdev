@@ -633,3 +633,18 @@ Note: Express.js v5 automatically intercepts errors thrown in async functions an
 
 208. What does a 503 HTTP status code typically indicate?
 208. The server is intentionally shut down, often due to issues like a problematic migration
+
+209. What is a database transaction and why is it important?
+209. A database transaction groups multiple write operations into a single atomic unit. If any operation fails, all operations are rolled back, preventing partial updates that could leave the database in an inconsistent state. It ensures data integrity, similar to a Git commit for databases.
+
+210. What database operations are performed when creating a new habit?
+210. When creating a new habit, two primary database operations are performed: inserting a new habit record into the habits table with user ID, name, description, frequency, and target count, and optionally creating associations in the habit_tag table by linking the new habit ID with provided tag IDs.
+
+211. What parameters are required when creating a new habit?
+211. The parameters required for creating a new habit are: user ID, name, description, frequency, target count, and optional tag IDs.
+
+212. How does a database transaction prevent data inconsistency?
+212. A database transaction ensures that if one write operation fails, all other operations in the same transaction are rolled back, preventing a scenario where only partial data is updated and potentially leaving the database in a broken or inconsistent state.
+
+213. What is the process of creating habit-tag associations?
+213. When creating a new habit with tags, the process involves mapping over the provided tag IDs and creating entries in the habit_tag table that link the new habit's ID with each tag ID, allowing many-to-many relationships between habits and tags.

@@ -1,15 +1,16 @@
 import { pgTable, uuid, varchar, text, timestamp, boolean, integer } from "drizzle-orm/pg-core"
 import { relations } from "drizzle-orm"
 import { createInsertSchema, createSelectSchema } from "drizzle-zod"
+import z from "zod"
 
 // Another way to think of it: Drizzle has two separate APIs for queries - an SQL-like API and a relational API. The SQL-like API doesn't require defining - you can write queries that look like SQL with just the core schema. However, you must define relations to use the relational API, which offers Prisma-like syntax that abstracts the SQL away completely with methods like findOne or findMany.
 
 // NOTE : please check for the sapces in the name of the fields here defined in string below to store in DB has not space.
 
 
-export const users = pgTable('users', { 
+export const users = pgTable('users', {
     id: uuid('id').primaryKey().defaultRandom(),
-    email: varchar('email', { length: 255 }).notNull().unique(), 
+    email: varchar('email', { length: 255 }).notNull().unique(),
     username: varchar('username', { length: 50 }).notNull().unique(),
     password: varchar('password', { length: 255 }).notNull(),
     firstName: varchar('first_name', { length: 255 }),
@@ -98,3 +99,4 @@ export type HabitTag = typeof habitTags.$inferSelect
 
 export const insertUserSchema = createInsertSchema(users) // This creates a Zod schema for inserting a new user into the database. It will validate the input data against the defined structure of the `users` table, ensuring that all required fields are present and correctly formatted before attempting to insert the data into the database.
 export const selectUserSchema = createSelectSchema(users) // This creates a Zod schema for selecting a user from the database. It will validate the output data against the defined structure of the `users` table, ensuring that the data retrieved from the database matches the expected format.
+export const insertHabitSchema = createInsertSchema(habits)
