@@ -618,3 +618,18 @@ Note: Express.js v5 automatically intercepts errors thrown in async functions an
 
 203. After authentication middleware, what becomes available in request objects?
 203. req.user becomes available, allowing safe methods for retrieving user-specific data
+
+204. What do HTTP status codes in the 200 range typically represent
+204. HTTP status codes in the 200 range represent successful responses
+
+205. What does a 404 HTTP status code typically indicate?
+205. The requested resource or route does not exist
+
+206. What HTTP status codes are frequently used for client errors?
+206. Status codes in the 400 range, such as 400 (invalid input), 401 (authentication missing), 403 (unauthorized), and 404 (resource not found)
+
+207. What does a 500 HTTP status code represent?
+207. A server crash or internal server error
+
+208. What does a 503 HTTP status code typically indicate?
+208. The server is intentionally shut down, often due to issues like a problematic migration
