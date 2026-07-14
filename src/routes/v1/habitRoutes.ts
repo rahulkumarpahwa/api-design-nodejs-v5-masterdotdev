@@ -3,7 +3,7 @@ import { validateBody, validateParams } from "../../middleware/validation.ts";
 import { z } from "zod";
 import { authenticateToken } from "../../middleware/auth.ts";
 import { insertHabitSchema } from "../../db/schema.ts";
-import { createHabit } from "../../controllers/habitController.ts";
+import { createHabit, getUserHabits } from "../../controllers/habitController.ts";
 
 // just the test schema
 const completeParansSchema = z.object({
@@ -20,9 +20,7 @@ export const habitRouter = Router();
 habitRouter.use(authenticateToken)
 
 
-habitRouter.get("/", (req, res) => {
-    res.status(200).json({ status: 'ok', message: 'habits' })
-})
+habitRouter.get("/", getUserHabits)
 
 habitRouter.get("/:id", (req, res) => {
     res.status(200).json({ status: 'ok', message: 'got one habit' })

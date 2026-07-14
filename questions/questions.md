@@ -648,3 +648,18 @@ Note: Express.js v5 automatically intercepts errors thrown in async functions an
 
 213. What is the process of creating habit-tag associations?
 213. When creating a new habit with tags, the process involves mapping over the provided tag IDs and creating entries in the habit_tag table that link the new habit's ID with each tag ID, allowing many-to-many relationships between habits and tags.
+
+214. What method is used to retrieve user habits with their associated tags in the database query?
+214. DB.query().findMany() with a 'with' clause to join the habits, habit_tags, and tags tables, allowing retrieval of habits and their associated tags
+
+215. How does the code transform the retrieved habit data to create a cleaner data structure?
+215. By using .map() to create a new object for each habit, extracting tags from habit_tags into a separate 'tags' array, and setting habit_tags to undefined to remove the intermediate table from the response
+
+216. What is the purpose of setting a field to undefined in the data transformation process?
+216. When an object field is set to undefined, it gets excluded when JSON.stringify() is used, effectively removing that field from the object
+
+217. What HTTP method and route is used for retrieving all habits for a user?
+217. Router.get('/') without an ID parameter, which means it retrieves all habits for the authenticated user
+
+218. Why is there no input validation for the GET request to retrieve user habits?
+218. GET requests have no payload, so there are no inputs to validate. Input validation is typically only required for PUT, POST, and PATCH requests
