@@ -4,6 +4,7 @@ import db from "../db/connection.ts";
 import { users, type NewUser, type User } from "../db/schema.ts";
 import { generateJWT } from "../utils/jwt.ts";
 import { eq } from "drizzle-orm";
+import type { Login } from "../schemas/authSchema.ts";
 
 
 export const register = async (req: Request<{}, {}, NewUser>, res: Response<{ message: string, user: Omit<NewUser, "updatedAt" | "password">, token: string } | { message: string, error: any }>) => {
@@ -39,7 +40,7 @@ export const register = async (req: Request<{}, {}, NewUser>, res: Response<{ me
     }
 }
 
-export const login = async (req: Request<{}, {}, Omit<NewUser, "username">>, res: Response<{ message: string, token: string, user: Omit<User, "password" | "updatedAt"> } | { message?: string, error?: any }>) => {
+export const login = async (req: Request<{}, {}, Login>, res: Response<{ message: string, token: string, user: Omit<User, "password" | "updatedAt"> } | { message?: string, error?: any }>) => {
     try {
         const { email, password } = req.body;
         const [user] = await db.select({

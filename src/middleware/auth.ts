@@ -2,8 +2,12 @@ import type { Request, Response, NextFunction } from "express";
 import { verifyJWT, type JWTPld } from "../utils/jwt.ts";
 
 
-export interface AuthenticatedRequest extends Request {
-    user?: JWTPld
+export interface AuthenticatedRequest<
+    Body = any,
+    Params = any,
+    Query = any
+> extends Request<Params, any, Body, Query> {
+    user?: JWTPld;
 }
 
 export const authenticateToken = async (req: AuthenticatedRequest, res: Response, next: NextFunction) => {

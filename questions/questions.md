@@ -663,3 +663,18 @@ Note: Express.js v5 automatically intercepts errors thrown in async functions an
 
 218. Why is there no input validation for the GET request to retrieve user habits?
 218. GET requests have no payload, so there are no inputs to validate. Input validation is typically only required for PUT, POST, and PATCH requests
+
+219. What method is used to update a habit in Drizzle when performing a partial update?
+219. The .set() method is used to apply partial updates to a habit without overriding existing data
+
+220. Why is a transaction used when updating a habit?
+220. A transaction ensures that if any part of the update fails, all changes can be rolled back, maintaining data integrity
+
+221. What two authorization checks are performed when updating a habit?
+221. Check that the habit ID matches the route ID, and 2. Ensure the habit's user ID matches the signed-in user's ID
+
+222. How does Drizzle handle transactions with regards to commit and rollback?
+222. Drizzle automatically rolls back if an error is thrown during the transaction, and automatically commits if the transaction completes without errors
+
+223. What HTTP method is used for updating a habit?
+223. The PATCH method is used for updating a habit with an ID parameter

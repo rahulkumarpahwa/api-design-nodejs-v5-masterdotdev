@@ -13,10 +13,14 @@ config:
         username: ''
         password: ''
       bypassProxy: ''
+
+request:
+  auth:
+    type: bearer
+    token: eyJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImRlbW8zIiwiZW1haWwiOiJkZW1vM0BkZW1vLmNvbSIsImlkIjoiNDVjOTNmYjctNDUwZS00OWZhLThlZjYtYmE2Nzc2OWY5MWE5IiwiaWF0IjoxNzg0MjcwMDM4LCJleHAiOjE3ODQ4NzQ4Mzh9.azNl7-p1eCBcMRp-2HiLFvXe8olKzt4eoJMX8tt1XMo
 bundled: false
 extensions:
   bruno:
     ignore:
       - node_modules
       - .git
-​

@@ -5,12 +5,12 @@ info:
 
 http:
   method: POST
-  url: "{{url}}/api/v1/auth/login"
+  url: '{{url}}/api/v1/auth/login'
   body:
     type: json
     data: |-
       {
-        "email": "demo3@demo.com",
+        "email": "demo@demo.com",
         "password": "password@demo"
       }
   auth: inherit
@@ -20,3 +20,4 @@ settings:
   timeout: 0
   followRedirects: true
   maxRedirects: 5
+​
