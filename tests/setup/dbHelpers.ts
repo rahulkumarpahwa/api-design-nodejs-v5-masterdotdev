@@ -30,8 +30,7 @@ export const createTestUser = async (userData: Partial<NewUser> = {}) => {
     .insert(users)
     .values({
       ...defaultData,
-      password: hashedPassword,
-      createdAt: new Date(Date.now()),
+      password: hashedPassword
     })
     .returning()
 
@@ -44,7 +43,7 @@ export const createTestUser = async (userData: Partial<NewUser> = {}) => {
   return { token, user, rawPassword: defaultData.password }
 }
 
-export const createHabit = async (
+export const createTestHabit = async (
   userId: string = '',
   habitData: Partial<NewHabit> = {},
 ) => {

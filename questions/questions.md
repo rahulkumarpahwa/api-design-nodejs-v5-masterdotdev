@@ -769,3 +769,18 @@ Note: Express.js v5 automatically intercepts errors thrown in async functions an
 
 253. What database objects are included when cleaning up test databases?
 253. Entries, habits, users, and tags
+
+254. What does cross-env app.stage=test do in the package.json script?
+254. It sets the environment variable 'app.stage' to 'test' before executing test runs, ensuring that the testing environment configuration is loaded
+
+255. What are some testing hooks provided by Vitest?
+255. Vitest provides hooks like afterEach, beforeEach, afterAll, and beforeAll, which can be used for tasks such as dropping databases, clearing mocks, and managing test setup and teardown
+
+256. What command is used to run tests in this setup?
+256. The command npm test is used, optionally with a search parameter like npm test setup to find and run specific tests
+
+257. Why is setting the environment variable important when running tests?
+257. Setting the environment variable ensures that the testing environment configuration (like .env file) is loaded, which is different from the development environment configuration
+
+258. What is the purpose of the initial test in setup.test.ts?
+258. The initial test verifies that the test setup works correctly by creating a test user and checking that the user is defined, ensuring database connection and user creation

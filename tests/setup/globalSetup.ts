@@ -2,8 +2,6 @@ import { db } from '../../src/db/connection.ts'
 import { users, habits, entries, habitTags, tags } from '../../src/db/schema.ts'
 import { sql } from 'drizzle-orm'
 import { execSync } from 'child_process'
-import { config } from 'dotenv'
-config()
 
 export default async function setup() {
   console.log('Setting Up the TEST DB')
@@ -17,7 +15,7 @@ export default async function setup() {
     console.log('Pushing Schema using Drizzle Kit...')
     execSync( // this will run a child process in terminal.
       `
-            npx drizzle-kit push --url="${process.env.DATABASE_URL}" --schema="./src/db/schema.ts" --dialect="postgresql" 
+            npx drizzle-kit push --url=${process.env.DATABASE_URL} --schema="./src/db/schema.ts" --dialect="postgresql" 
             `, // directly pushing the schema to the cloud test database.
       {
         stdio: 'inherit',
