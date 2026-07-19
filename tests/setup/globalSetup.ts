@@ -14,11 +14,11 @@ export default async function setup() {
     await db.execute(sql`DROP TABLE IF EXISTS ${tags} CASCADE`)
     await db.execute(sql`DROP TABLE IF EXISTS ${habitTags} CASCADE`)
 
-    console.log('Pushing Schema usin Drizzle Kit...')
+    console.log('Pushing Schema using Drizzle Kit...')
     execSync( // this will run a child process in terminal.
       `
-            npx drizzle-kit push --url="${process.env.DATABASE_URL}" --schema="./src/db/schema.ts" --dialect="postgresql"
-            `,
+            npx drizzle-kit push --url="${process.env.DATABASE_URL}" --schema="./src/db/schema.ts" --dialect="postgresql" 
+            `, // directly pushing the schema to the cloud test database.
       {
         stdio: 'inherit',
         cwd: process.cwd(),

@@ -93,6 +93,7 @@ export type User = typeof users.$inferSelect // for selecting the checks will be
 export type NewUser = typeof users.$inferInsert // for inserting the checks will be according for the values.
 
 export type Habit = typeof habits.$inferSelect
+export type NewHabit = typeof habits.$inferInsert
 export type Entry = typeof entries.$inferSelect
 export type Tag = typeof tags.$inferSelect
 export type HabitTag = typeof habitTags.$inferSelect

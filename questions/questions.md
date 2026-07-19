@@ -754,3 +754,18 @@ Note: Express.js v5 automatically intercepts errors thrown in async functions an
 
 248. Why use process.env instead of importing an environment file for test database configuration?
 248. To avoid loading unnecessary environment variables for the application environment when only test database configuration is needed
+
+249. Why do developers drop and recreate database tables during testing?
+249. To ensure each test has the same starting state, eliminate leftover data from previous test runs, and catch schema-related bugs early in the testing process
+
+250. What default values are used when creating a test user?
+250. Email: test with a random number at example.com, Username: test user with a random number, First name: Test, Last name: User
+
+251. What steps are taken when creating a test user?
+251. Hash the password, 2. Create a new user, 3. Generate a token using user ID, email, and username, 4. Return the token, user, and original password
+
+252. What parameters are required when creating a test habit?
+252. User ID and habit data, with default data including name, timestamp, description, frequency, and target count
+
+253. What database objects are included when cleaning up test databases?
+253. Entries, habits, users, and tags
