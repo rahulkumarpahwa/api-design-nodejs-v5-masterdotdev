@@ -739,3 +739,18 @@ Note: Express.js v5 automatically intercepts errors thrown in async functions an
 
 243. What does a stateless test environment mean?
 243. You should be able to run any individual test independently and have it behave the same way, without dependencies or side effects from previous tests
+
+244. What Drizzle ORM method can be used to execute raw SQL with a template-tagged SQL object?
+244. The exec method, which can take raw SQL and allows using a template-tagged SQL object that can substitute tables and infer SQL names automatically
+
+245. What Drizzle Kit command is used to push the latest database schema?
+245. npx drizzle-kit push, which can be used with custom configuration flags like database URL, schema location, and database dialect
+
+246. What Node.js method allows running bash commands inside a child process?
+246. execSync from the Node.js standard library, which can execute shell commands synchronously
+
+247. What is the primary purpose of dropping database tables during test setup?
+247. To ensure a clean, consistent state for each test run by removing existing data and relationships before running tests
+
+248. Why use process.env instead of importing an environment file for test database configuration?
+248. To avoid loading unnecessary environment variables for the application environment when only test database configuration is needed

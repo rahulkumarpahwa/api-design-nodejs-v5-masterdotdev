@@ -2,7 +2,7 @@ import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
   test: {
-    globals: true,
+    globals: true, // Adds testing functions like describe and test to the global namespace
     globalSetup: ['./tests/setup/globalSetup.ts'],
     // Automatically clean up after each test to ensure isolation
     clearMocks: true,
