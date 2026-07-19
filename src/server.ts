@@ -5,6 +5,7 @@ import helmet from "helmet";
 import { v1Router } from './routes/v1/index.ts';
 import morgan from 'morgan';
 import { isTest } from '../env.ts';
+import { errorHandler } from './middleware/errorHandler.ts';
 const app = express();
 
 // const apiTimeout = 10 * 1000;
@@ -55,11 +56,6 @@ app.use("/api/v1/*path", (req, res) => {
     })
 })
 
-// Error handling middleware
-const errorHandler = (err: Error, req: Request, res: Response, next: NextFunction) => {
-    console.error(err.stack)
-    res.status(500).json({ error: 'Something went wrong!' })
-}
 app.use(errorHandler)
 
 // export for the test

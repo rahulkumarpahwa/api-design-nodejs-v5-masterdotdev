@@ -708,3 +708,18 @@ Note: Express.js v5 automatically intercepts errors thrown in async functions an
 
 233. What term describes the number of arguments a function takes in programming?
 233. Arity
+
+234. What is the purpose of an error handler middleware in Express?
+234. To catch and handle errors that occur in middleware or controllers, preventing the server from breaking and providing a way to respond to client with appropriate error status and messages
+
+235. What are two common approaches to handling errors in the error handler middleware?
+235. Logging the entire stack trace for development purposes, 2. Setting different status codes and messages based on error name or type
+
+236. What is a default status code if no specific error status is provided?
+236. 500 (Internal Server Error)
+
+237. How does an error handler middleware change the behavior of other middleware?
+237. Other middleware can now simply throw an error and call next() with the error object, instead of handling the error response themselves
+
+238. What is an example of a specific error type that might be handled differently?
+238. A 'validation error' which would typically result in a 400 status code and a specific 'Validation error' message
