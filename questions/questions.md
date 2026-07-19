@@ -693,3 +693,18 @@ Note: Express.js v5 automatically intercepts errors thrown in async functions an
 
 228. What data type should the target count have when creating a habit?
 228. Integer (number)
+
+229. How many arguments does an error handling middleware in Express take?
+229. 4 arguments, with the first argument always being an error
+
+230. What is required to trigger an Error Handler in Express?
+230. Call Next and pass it an error, not just throwing an error
+
+231. What happens to middleware and other routes when Next is called with an error?
+231. Everything is skipped, and the error goes straight to the nearest Error Handler
+
+232. At what levels can Error Handling middleware be applied in Express?
+232. Route level, router level, and app level (except code level)
+
+233. What term describes the number of arguments a function takes in programming?
+233. Arity
