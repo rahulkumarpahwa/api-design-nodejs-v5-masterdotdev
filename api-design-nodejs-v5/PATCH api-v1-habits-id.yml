@@ -1,0 +1,25 @@
+info:
+  name: PATCH api-v1-habits-id
+  type: http
+  seq: 1
+
+http:
+  method: PATCH
+  url: '{{url}}/api/v1/habits/:id'
+  params:
+    - name: id
+      value: e2df6a88-6c08-4a2f-adb7-bceca990be0c
+      type: path
+  body:
+    type: json
+    data: |-
+      {
+          "name" : "Stretch Hummies"
+      }
+  auth: inherit
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5

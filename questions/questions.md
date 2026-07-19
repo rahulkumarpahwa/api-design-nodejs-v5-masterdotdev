@@ -678,3 +678,18 @@ Note: Express.js v5 automatically intercepts errors thrown in async functions an
 
 223. What HTTP method is used for updating a habit?
 223. The PATCH method is used for updating a habit with an ID parameter
+
+224. What are the required fields when creating a new habit in the API?
+224. Name, description (optional), frequency, target count, and optional tag ID
+
+225. What HTTP method is used to create a new habit?
+225. POST to /api/habit route
+
+226. How can you retrieve all habits using the API?
+226. Send a GET request to the /api/habit endpoint
+
+227. What HTTP method is used to update an existing habit?
+227. PATCH to /api/habit with the habit's ID
+
+228. What data type should the target count have when creating a habit?
+228. Integer (number)

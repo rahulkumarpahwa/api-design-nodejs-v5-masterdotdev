@@ -19,7 +19,6 @@ export const authenticateToken = async (req: AuthenticatedRequest, res: Response
         }
         const payload = await verifyJWT(token);
         req.user = payload;
-        console.log(payload)
         next()
     } catch (e) {
         return res.status(403).json({ error: "Forbidden" })

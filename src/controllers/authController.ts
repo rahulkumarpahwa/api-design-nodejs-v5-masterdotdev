@@ -67,6 +67,7 @@ export const login = async (req: Request<{}, {}, Login>, res: Response<{ message
             email,
             id: user.id
         })
+        console.log(token)
 
         res.status(201).json({
             message: "User Login Successfully",

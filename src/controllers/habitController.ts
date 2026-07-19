@@ -10,7 +10,7 @@ export const createHabit = async (req: AuthenticatedRequest, res: Response) => {
     const { name, description, frequency, targetCount, tagIds } = req.body
 
     const userId = req.user!.id
-
+    
     const result = await db.transaction(async (tx) => {
       const [newHabit] = await tx
         .insert(habits)

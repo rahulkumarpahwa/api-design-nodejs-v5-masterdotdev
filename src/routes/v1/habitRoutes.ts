@@ -10,7 +10,7 @@ const completeParansSchema = z.object({
     id: z.string().max(4)
 })
 
-export const createHabitSchema = insertHabitSchema.extend({ tagIds: z.array(z.string()).optional(), });
+export const createHabitSchema = insertHabitSchema.partial().extend({ tagIds: z.array(z.string()).optional(), });
 const updateHabitSchema = insertHabitSchema.partial().extend({ tagIds: z.array(z.string()).optional(), });
 
 
