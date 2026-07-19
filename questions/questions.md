@@ -723,3 +723,19 @@ Note: Express.js v5 automatically intercepts errors thrown in async functions an
 
 238. What is an example of a specific error type that might be handled differently?
 238. A 'validation error' which would typically result in a 400 status code and a specific 'Validation error' message
+
+239. What is the primary reason for creating a separate database for testing?
+239. To avoid dirtying the state of the development database and ensure clean, independent test environments
+
+240. What does setting global: true do in the Vitest configuration?
+240. Adds testing functions like describe, beforeAll, and test to the global space so they don't need to be imported in every test file
+
+
+241. Why is it important to reset mocks before and after each test run?
+241. To prevent creating dependencies across tests and ensure each test can run independently and behave consistently
+
+242. What is the purpose of setting pool to run tests sequentially in Vitest?
+242. To avoid database conflicts, such as multiple tests trying to insert a user with the same email simultaneously, which can cause constraint issues or inconsistent test results
+
+243. What does a stateless test environment mean?
+243. You should be able to run any individual test independently and have it behave the same way, without dependencies or side effects from previous tests
