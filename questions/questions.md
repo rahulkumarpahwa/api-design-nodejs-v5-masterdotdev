@@ -814,3 +814,18 @@ Note: Express.js v5 automatically intercepts errors thrown in async functions an
 
 268. What is the purpose of writing tests in the development process?
 268. To catch potential issues early, ensure endpoints work as expected, and validate the functionality of different components of the application
+
+269. What HTTP status code is expected when logging in with valid credentials?
+269. 201
+
+270. What three properties should the login response body contain?
+270. message, user, and token
+
+271. What three key aspects should you consider when testing a route? 
+271. What route are you testing, what do you need to send, and what do you expect to get back from the response object
+
+272. How do you handle routes that require authorization when testing?
+272. Pass the token in the header, similar to how you would in Postman
+
+273. What important detail should be checked in the login response to ensure security?
+273. Ensure the response does not contain a password
