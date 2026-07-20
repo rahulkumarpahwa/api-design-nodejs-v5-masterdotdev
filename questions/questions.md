@@ -848,3 +848,18 @@ Immediately restore the local database URL in the .env file
 
 278. What deployment platforms were mentioned in the discussion?
 278. Render.com, Railway, Vercel, Netlify, Cloudflare, Fly.io, AWS, Google Cloud, Azure, and Digital Ocean were mentioned as potential deployment platforms.
+
+279. Why is it important to use process.env.PORT instead of hardcoding the port number?
+279. In production, the hosting provider dynamically assigns a port, so hardcoding a specific port will prevent successful deployment. Using process.env.PORT ensures the application can adapt to the dynamically assigned port.
+
+280. What precautions should be taken with environment variables when preparing for production?
+280. Create new secure values for production, never reuse development secrets. Collect all necessary environment variables, and consider using a .env file that can be easily added by hosting providers.
+
+281. Why should hardcoded localhost URLs be replaced?
+281. In production, the URL will not be localhost. Hosting providers inject environment variables that provide the correct production URL, which should be used instead of hardcoded localhost references.
+
+282. What is the purpose of adding the engines field to package.json when deploying to Render?
+282. Adding the engines field specifies the minimum Node.js version required, preventing Render from defaulting to an older version that may not support TypeScript or other features needed by the application.
+
+283. What considerations are important when selecting a branch for deployment?
+283. While the main branch is typically used for deployment, you can choose any branch. The key is to ensure the selected branch contains the code you want to deploy and is ready to be pushed to GitHub.
