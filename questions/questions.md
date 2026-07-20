@@ -784,3 +784,18 @@ Note: Express.js v5 automatically intercepts errors thrown in async functions an
 
 258. What is the purpose of the initial test in setup.test.ts?
 258. The initial test verifies that the test setup works correctly by creating a test user and checking that the user is defined, ensuring database connection and user creation
+
+259. What are the four main types of tests discussed?
+259. Unit Tests, Integration Tests, End-to-End Tests, and Snapshot Tests
+
+260. What is the primary goal of Integration Tests in API development?
+260. To test business logic by simulating a client's interaction with the API from the start of the request to the end, providing a high degree of confidence in the API's functionality
+
+261. What percentage of code can typically be covered by Integration Tests for an API?
+261. Approximately 70% of the code, covering all endpoints and most database interactions
+
+262. What are some best practices when writing tests?
+262. Don't leave leftover data from previous test runs, 2) Mock out third-party API calls and expensive modules, 3) Handle authentication efficiently, 4) Be aware of potential race conditions, 5) Test the behavior, not implementation details, 6) Write isolated tests, 7) Use descriptive test names, 8) Test both happy path and edge cases
+
+263. What is the primary purpose of testing according to the discussion?
+263. To gain confidence that the code is working as intended, ensuring critical functionality works correctly and identifying potential issues before production

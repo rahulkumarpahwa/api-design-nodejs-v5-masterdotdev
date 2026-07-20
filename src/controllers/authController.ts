@@ -4,10 +4,10 @@ import db from "../db/connection.ts";
 import { users, type NewUser, type User } from "../db/schema.ts";
 import { generateJWT } from "../utils/jwt.ts";
 import { eq } from "drizzle-orm";
-import type { Login } from "../schemas/authSchema.ts";
+import type { Login, Register } from "../schemas/authSchema.ts";
 
 
-export const register = async (req: Request<{}, {}, NewUser>, res: Response<{ message: string, user: Omit<NewUser, "updatedAt" | "password">, token: string } | { message: string, error: any }>) => {
+export const register = async (req: Request<{}, {}, Register>, res: Response<{ message: string, user: Omit<NewUser, "updatedAt" | "password">, token: string } | { message: string, error: any }>) => {
     try {
         const { email, username, password, firstName, lastName } = req.body;
         const hashedPassword = await gethashedPassword(password);
@@ -67,7 +67,6 @@ export const login = async (req: Request<{}, {}, Login>, res: Response<{ message
             email,
             id: user.id
         })
-        console.log(token)
 
         res.status(201).json({
             message: "User Login Successfully",
