@@ -7,20 +7,18 @@ export default async function setup() {
   console.log('Setting Up the TEST DB')
   try {
     await db.execute(sql`DROP TABLE IF EXISTS ${entries} CASCADE`)
+    await db.execute(sql`DROP TABLE IF EXISTS ${habitTags} CASCADE`)
     await db.execute(sql`DROP TABLE IF EXISTS ${habits} CASCADE`)
     await db.execute(sql`DROP TABLE IF EXISTS ${users} CASCADE`)
     await db.execute(sql`DROP TABLE IF EXISTS ${tags} CASCADE`)
-    await db.execute(sql`DROP TABLE IF EXISTS ${habitTags} CASCADE`)
+
+    console.log(process.env.DATABASE_URL)
 
     console.log('Pushing Schema using Drizzle Kit...')
-    execSync( // this will run a child process in terminal.
-      `
-            npx drizzle-kit push --url=${process.env.DATABASE_URL} --schema="./src/db/schema.ts" --dialect="postgresql" 
-            `, // directly pushing the schema to the cloud test database.
-      {
-        stdio: 'inherit',
-        cwd: process.cwd(),
-      },
+    execSync(
+      // this will run a child process in terminal.
+      `npx drizzle-kit push --url="${process.env.DATABASE_URL}" --schema="./src/db/schema.ts" --dialect=postgresql`, // directly pushing the schema to the cloud test database.
+      { encoding: 'utf8', stdio: 'pipe', cwd: process.cwd() },
     )
 
     console.log('Test DB Created')
@@ -29,10 +27,10 @@ export default async function setup() {
     return async () => {
       try {
         await db.execute(sql`DROP TABLE IF EXISTS ${entries} CASCADE`)
+        await db.execute(sql`DROP TABLE IF EXISTS ${habitTags} CASCADE`)
         await db.execute(sql`DROP TABLE IF EXISTS ${habits} CASCADE`)
         await db.execute(sql`DROP TABLE IF EXISTS ${users} CASCADE`)
         await db.execute(sql`DROP TABLE IF EXISTS ${tags} CASCADE`)
-        await db.execute(sql`DROP TABLE IF EXISTS ${habitTags} CASCADE`)
         process.exit(0)
       } catch (e) {
         console.log('Failed to clear Test DB :', e)

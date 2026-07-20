@@ -2,7 +2,7 @@ import {
   createTestUser,
   createTestHabit,
   cleanUpDatabase,
-} from './dbHelpers'
+} from '../tests/setup/dbHelpers.ts'
 
 describe('Test Setup', () => {
   test('test should connect to TEST DB', async () => {
