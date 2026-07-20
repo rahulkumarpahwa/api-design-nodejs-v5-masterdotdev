@@ -863,3 +863,18 @@ Immediately restore the local database URL in the .env file
 
 283. What considerations are important when selecting a branch for deployment?
 283. While the main branch is typically used for deployment, you can choose any branch. The key is to ensure the selected branch contains the code you want to deploy and is ready to be pushed to GitHub.
+
+284. What are the key steps to deploy a Node.js Express application on Render?
+284. Sign in with GitHub, 2. Create a new web service, 3. Select GitHub repository, 4. Configure language and branch, 5. Set environment variables (database URL, JWT secret, etc.), 6. Choose deployment settings, 7. Enable auto-deploy
+
+285. What environment variables are typically needed when deploying a Node.js application?
+285. Key environment variables include: database URL, JWT secret, NODE_ENV (set to production), bcrypt rounds, and any other application-specific configuration settings
+
+286. What is the significance of setting NODE_ENV to production during deployment?
+286. Setting NODE_ENV to production typically optimizes application performance, disables development-specific debugging features, and ensures the application runs in a production-ready configuration
+
+287. What deployment strategy does Render use for web services?
+287. Render uses an auto-deploy strategy where the application is automatically rebuilt and redeployed when changes are committed to the specified branch
+
+288. What is a health endpoint in a web application deployment?
+288. A health endpoint is a route (typically /health) that returns a 200 status code to indicate that the application is running correctly and responsive
