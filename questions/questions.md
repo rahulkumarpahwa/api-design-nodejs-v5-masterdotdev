@@ -799,3 +799,18 @@ Note: Express.js v5 automatically intercepts errors thrown in async functions an
 
 263. What is the primary purpose of testing according to the discussion?
 263. To gain confidence that the code is working as intended, ensuring critical functionality works correctly and identifying potential issues before production
+
+264. What is SuperTest used for in API testing?
+264. SuperTest allows programmatically driving an API through Express routes without exposing a port, enabling testing routes and HTTP verbs without actually starting a server
+
+265. What pattern is used when writing the test description?
+265. The it should pattern, which clearly describes what is being tested in a descriptive and readable manner
+
+266. What assertions are typically made when testing a user registration endpoint?
+266. Check for a 201 successful post status, verify the response body contains a user property, confirm the response includes a token property, and ensure the user object does not include a password
+
+267. What is done after each test in this testing approach?
+267. Clean up the database by clearing all entries for habits, users, habit tags, and tags to maintain test isolation
+
+268. What is the purpose of writing tests in the development process?
+268. To catch potential issues early, ensure endpoints work as expected, and validate the functionality of different components of the application
